@@ -7,6 +7,8 @@ Dir[File.join(directory,'vendor','plugins','*')].each do |dir|
   ActiveSupport::Dependencies.load_once_paths.delete(path)
 end
 
+RAILS_DEFAULT_LOGGER.info 'Starting Exception Handler plugin for RedMine'
+
 Redmine::Plugin.register :redmine_exception_handler_plugin do
   name 'Redmine Exception Handler plugin'
   author 'Eric Davis'
