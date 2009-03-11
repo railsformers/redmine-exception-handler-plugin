@@ -9,7 +9,7 @@ end
 
 RAILS_DEFAULT_LOGGER.info 'Starting Exception Handler plugin for RedMine'
 
-Redmine::Plugin.register :redmine_exception_handler_plugin do
+Redmine::Plugin.register :ex_handler_plugin do
   name 'Redmine Exception Handler plugin'
   author 'Eric Davis'
   description 'Send emails when exceptions occur in Redmine.'
