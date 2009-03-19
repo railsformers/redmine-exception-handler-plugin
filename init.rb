@@ -33,9 +33,9 @@ module RedmineExceptionNotifierPatch
   module InstanceMethods
     def exception_notification_with_database(exception, controller, request, data={}, &block)
       if Object.const_defined?('Setting')
-        ExceptionNotifier.exception_recipients = Setting.plugin_ex_handler_plugin['exception_handler_recipients'].split(',').map { |name| name.strip }
-        ExceptionNotifier.sender_address = Setting.plugin_ex_handler_plugin['exception_handler_sender_address']
-        ExceptionNotifier.email_prefix = Setting.plugin_ex_handler_plugin['exception_handler_prefix']
+        ExceptionNotifier.exception_recipients = Setting.plugin_redmine_exception_handler_plugin['exception_handler_recipients'].split(',').map { |name| name.strip }
+        ExceptionNotifier.sender_address = Setting.plugin_redmine_exception_handler_plugin['exception_handler_sender_address']
+        ExceptionNotifier.email_prefix = Setting.plugin_redmine_exception_handler_plugin['exception_handler_prefix']
       end
       exception_notification_without_database(exception, controller, request, data, &block)
     end
